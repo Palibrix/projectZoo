@@ -1,49 +1,126 @@
-
-import java.util.Scanner;
-
-class Zoo
- {
-
-  
-   public static void announce(){
-       
-        int count = 5;
-        int i;
-        System.out.println("Welcome to our zoo!\nThe show starts in...");
-       
-        for(i=0;i < 4;i++){
-        System.out.println(count + " seconds");
-        count = count-1;
-      }
-        System.out.println(count + " second");
-    }
-    
-   int pass = 1; //UPDATE PASS FEATURE
-  
-   public static void phoneCall(){
-     System.out.println("Hi! Youre calling to Zoo. What do you want to find out?");
-     System.out.println("1 - Number of tickets left; 2 - Ticket price; 3 - Hours of work;");
-     Scanner scanner = new Scanner(System.in);
-     int response = scanner.nextInt(); //TYPE CHECK!!!!!!!!!!!!
-
-       if(response == 1){ //UPDATE PASS FEATURE
-         // тут просто кількість квитків - кількість куплених
-         System.out.println("There are "+i+" tickets left.");
-         int pass = 0;
-         System.out.println("Anything else?");
-         }
-         }
-       
-       
-   
-   
-    
-   public static void main(String args[]){
-//____________________________________________________________________________
-//SCANNER_____________________________________________________________________
-      System.out.println("Hi! And welcome to our Zoo! Enter your request:");
-      phoneCall();
-//IF STATEMENT: NAME__________________________________________________________
-////____________________________________________________________________________
-   }
-   }
+package pr1; 
+ 
+import java.util.Scanner; 
+import java.util.Arrays; 
+ 
+ 
+ 
+public class Zoo extends Main{ 
+ 
+    String name[]; 
+    String location[]; 
+    int price; static int quantity; 
+ 
+    RandomQuantity random = new RandomQuantity(); 
+    int rdName = random.rdName(); 
+    int rdLoc1 = random.rdLocation(); 
+    int rdLoc2 = random.rdLocation(); 
+ 
+    Zoo(){} 
+    Zoo(String name[], String location[], int price, int quantity){ 
+        this.name = name; 
+        this.location = location; 
+        this.price = price; 
+        this.quantity = quantity; 
+    } 
+ 
+ 
+    public int moneyAsk(){ 
+        int money = sc.nextInt(); 
+        return money; 
+    } 
+ 
+    void buyTicket() { 
+        Scanner sc = new Scanner(System.in); 
+        int numOfBuyTickets = sc.nextInt(); 
+        int total = numOfBuyTickets * price; //сума яку треба сплатити за усі квитки; 
+//після перевірки не повертає в меню 
+        if (moneyAsk()>= total) { 
+            if (numOfBuyTickets > quantity) { 
+                System.out.println("We don't have so many tickets already!Would you like to buy some less?"); 
+                buyTicket(); 
+            } else if (numOfBuyTickets == 0) { 
+                System.out.println("Uhh...Have you changed you're mind?[y/n]"); 
+                mindChanging(); 
+            } else if (numOfBuyTickets < 0) { 
+                System.out.println("That's not serious..."); 
+                buyTicket(); 
+            } else { 
+                System.out.println("There was " + quantity + " tickets"); 
+                quantity = quantity - numOfBuyTickets; 
+                System.out.println("And now there is " + quantity + " of them"); 
+                System.out.println("You've bought " + numOfBuyTickets + " ticket(s). Thank you and have fun!"); 
+            } 
+ 
+        } 
+        else { 
+            System.out.println("Sorry, you have no enough money :(("); 
+            phoneCall(); //повернутись в меню 
+        } 
+    } 
+ 
+    void mindChanging(){ 
+        Scanner sc = new Scanner(System.in); 
+        String buyAnswer = sc.nextLine(); 
+        buyAnswer = buyAnswer.toLowerCase(); 
+        if(buyAnswer.equals("y")){ 
+            System.out.println("Returning you to menu"); 
+            // phoneCall(); 
+        }else if(buyAnswer.equals("n")){ 
+            buyTicket(); 
+        }else{ 
+            System.out.println("Please enter [Y/N]"); 
+            mindChanging(); 
+ 
+        } 
+    } 
+ 
+    void announce() throws InterruptedException { 
+        int i; 
+        System.out.println("Welcome to our zoo!\nThe show starts in..."); 
+ 
+        for(i=5;i >= 0 ;i--){ 
+            System.out.println(i + " seconds"); 
+            Thread.sleep(1000); 
+        } 
+    } 
+ 
+    void answerEqw1(){ 
+        System.out.println(quantity + " ticket(s) left"); 
+    } 
+ 
+    void answerEqw2(){ 
+        System.out.println("Tickets price: " + price + "₴"); 
+    } 
+ 
+    void answerEqw3(){ 
+        System.out.println(name[rdName]); 
+    } 
+ 
+    void answerEqw4(){ 
+        while(rdLoc1 == rdLoc2){ 
+            rdLoc2 = random.rdLocation(); 
+        } 
+        System.out.println("We have our Zoo in " + location[rdLoc1] +" and " + location[rdLoc2]); 
+    } 
+ 
+    void answerEqw5(){ 
+        System.out.println("How much money do you have?"); 
+        moneyAsk(); 
+        System.out.println("Good! Now enter a number of tickets you want to buy!"); 
+        buyTicket(); 
+    } 
+ 
+ 
+ 
+ 
+    @Override 
+    public String toString() { 
+        return "Zoo{" + 
+                "name=" + Arrays.toString(name) + 
+                ", location=" + Arrays.toString(location) + 
+                ", price=" + price + 
+                ", quantity=" + quantity + 
+                '}'; 
+    } 
+}
