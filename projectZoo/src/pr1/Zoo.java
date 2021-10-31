@@ -22,42 +22,7 @@ public class Zoo extends Main{
         this.location = location; 
         this.price = price; 
         this.quantity = quantity; 
-    } 
- 
- 
-    public int moneyAsk(){ 
-        int money = sc.nextInt(); 
-        return money; 
-    } 
- 
-    void buyTicket() { 
-        Scanner sc = new Scanner(System.in); 
-        int numOfBuyTickets = sc.nextInt(); 
-        int total = numOfBuyTickets * price; //сума яку треба сплатити за усі квитки; 
-//після перевірки не повертає в меню 
-        if (moneyAsk()>= total) { 
-            if (numOfBuyTickets > quantity) { 
-                System.out.println("We don't have so many tickets already!Would you like to buy some less?"); 
-                buyTicket(); 
-            } else if (numOfBuyTickets == 0) { 
-                System.out.println("Uhh...Have you changed you're mind?[y/n]"); 
-                mindChanging(); 
-            } else if (numOfBuyTickets < 0) { 
-                System.out.println("That's not serious..."); 
-                buyTicket(); 
-            } else { 
-                System.out.println("There was " + quantity + " tickets"); 
-                quantity = quantity - numOfBuyTickets; 
-                System.out.println("And now there is " + quantity + " of them"); 
-                System.out.println("You've bought " + numOfBuyTickets + " ticket(s). Thank you and have fun!"); 
-            } 
- 
-        } 
-        else { 
-            System.out.println("Sorry, you have no enough money :(("); 
-            phoneCall(); //повернутись в меню 
-        } 
-    } 
+    }
  
     void mindChanging(){ 
         Scanner sc = new Scanner(System.in); 
@@ -77,12 +42,13 @@ public class Zoo extends Main{
  
     void announce() throws InterruptedException { 
         int i; 
-        System.out.println("Welcome to our zoo!\nThe show starts in..."); 
+        System.out.println("The show starts in...");
  
         for(i=5;i >= 0 ;i--){ 
             System.out.println(i + " seconds"); 
             Thread.sleep(1000); 
-        } 
+        }
+        System.out.println("Have fun!");
     } 
  
     void answerEqw1(){ 
@@ -104,16 +70,33 @@ public class Zoo extends Main{
         System.out.println("We have our Zoo in " + location[rdLoc1] +" and " + location[rdLoc2]); 
     } 
  
-    void answerEqw5(){ 
-        System.out.println("How much money do you have?"); 
-        moneyAsk(); 
-        System.out.println("Good! Now enter a number of tickets you want to buy!"); 
+    void answerEqw5(){
+        System.out.println("Enter a number of tickets you want to buy!");
         buyTicket(); 
-    } 
- 
- 
- 
- 
+    }
+
+    void buyTicket() {
+        int numOfBuyTickets = sc.nextInt();
+        if (numOfBuyTickets > quantity) {
+            System.out.println("We don't have so many tickets already!Would you like to buy some less?");
+            buyTicket();
+        } else if (numOfBuyTickets == 0) {
+            System.out.println("Uhh...Have you changed you're mind?[y/n]");
+            mindChanging();
+        } else if (numOfBuyTickets < 0) {
+            System.out.println("That's not serious...");
+            buyTicket();
+        } else {
+            System.out.println("There was " + quantity + " tickets");
+            quantity = quantity - numOfBuyTickets;
+            System.out.println("And now there is " + quantity + " of them");
+            System.out.println("You've bought " + numOfBuyTickets + " ticket(s). Thank you and have fun!");
+        }
+    }
+
+
+
+
     @Override 
     public String toString() { 
         return "Zoo{" + 

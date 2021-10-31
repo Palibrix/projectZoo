@@ -20,23 +20,13 @@ public class Main {
  
  
  
-    public static void main(String args[]) throws InterruptedException { 
- 
-        Main m = new Main(); 
- 
+    public static void main(String args[]) throws InterruptedException {
+        Main m = new Main();
  
  
-        System.out.println(first.toString()); 
- 
- 
-        System.out.println("We are happy to see you again!"); 
- 
- 
-//        System.out.println(a); 
-//        first.announce(); 
-        m.phoneCall(); 
-//        System.out.println(answer); 
- 
+        System.out.println("We are happy to see you again!");
+        m.phoneCall();
+        first.announce();
     } 
  
  
@@ -87,16 +77,16 @@ public class Main {
  
     void reattemp(){ 
         String b = sc.nextLine(); 
-        b = b.toLowerCase(); //tyt була помилка.не понижало букви, треба було переприсвоїти значення змінній b; 
+        b = b.toLowerCase(); //tyt була помилка.не понижало букви, треба було переприсвоїти значення змінній b;
         if(b.equals("y")){ 
             System.out.println(); 
             System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]; Buy a ticket[5];"); 
             exepts(); 
-        }else if (b.equals("n")){} 
-            else{ 
+        }else if (b.equals("n")){}
+            else{
                 System.out.println("Type \"y\" or \"n\""); 
                 reattemp(); 
-            } 
+            }
     } 
  
     void exeptToString(){ 
