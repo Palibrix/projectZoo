@@ -42,7 +42,7 @@ public class Zoo extends Main{
  
     void announce() throws InterruptedException { 
         int i; 
-        System.out.println("The show starts in...");
+        System.out.println("Our Zoo opens in...");
  
         for(i=5;i >= 0 ;i--){ 
             System.out.println(i + " seconds"); 

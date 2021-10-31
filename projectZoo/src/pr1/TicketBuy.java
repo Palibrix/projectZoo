@@ -1,9 +1,5 @@
 package pr1;
 
-import pr1.RandomQuantity;
-import pr1.Zoo;
-import pr1.Main;
-
 import java.util.Scanner;
 
 

@@ -1,9 +1,9 @@
 package pr1; 
  
-import java.util.Scanner; 
- 
-//import static pr1.Zoo.buyTicket; 
- 
+import java.util.Scanner;
+
+import static pr1.Animal.visitAnAnimal;
+
 //TODOO: PhoneCall[1], Buy a Ticket[2], Visit an animal[3]; 
 public class Main { 
     Scanner sc = new Scanner(System.in); 
@@ -13,23 +13,27 @@ public class Main {
  
     static String names[] = {"Shapito", "Karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"}; 
     static String locations[]= {"l`viv", "Taraso-Shevchenkivsk", "Old York", "Riznutsi", "Odessa-dad", "Pryamovo"}; 
-    static Zoo first = new Zoo(names, locations, 50, randomQuant); 
- 
-    static int answer = -1; 
- 
- 
+    static Zoo first = new Zoo(names, locations, 50, randomQuant);
+
+
+    static int answer = -1;
+
+
  
  
     public static void main(String args[]) throws InterruptedException {
         Main m = new Main();
- 
- 
+
         System.out.println("We are happy to see you again!");
         m.phoneCall();
         first.announce();
-    } 
- 
- 
+        System.out.println("What animal would you like to visit?\n" +
+                "Panda[1]; Lion[2]; Giraffe[3]");
+        visitAnAnimal();
+    }
+
+
+
  
  
     void phoneCall(){ 
