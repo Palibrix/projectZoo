@@ -4,9 +4,13 @@ import java.util.Arrays;
 
 
 public class Zoo extends Main{
+
+
     String name[];
     String location[];
-    int price; int quantity;
+    int price;
+    int quantity;
+
 
     RandomQuantity random = new RandomQuantity();
     int rdName = random.rdName();
@@ -14,13 +18,12 @@ public class Zoo extends Main{
     int rdLoc2 = random.rdLocation();
 
     Zoo(){}
-    Zoo(String name[], String location[], int price, int quantity){
+    /*Constructor*/Zoo(String name[], String location[], int price, int quantity){
         this.name = name;
         this.location = location;
         this.price = price;
         this.quantity = quantity;
     }
-
 
     void announce() throws InterruptedException {
         int i;
@@ -51,6 +54,9 @@ public class Zoo extends Main{
         System.out.println("We have our Zoo in " + location[rdLoc1] +" and " + location[rdLoc2]);
     }
 
+    void answerEqw5(){
+
+    }
 
 
 
