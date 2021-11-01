@@ -13,6 +13,7 @@ public class Human {
     String [] humanCitiesOfBirth = {"Kyjiv","Moscow","Bangladesh","Warsaw","Washington","Ankara","London"};
     String [] humanCountriesOfBirth = {"Ukraine","Russia","India","Poland","USA","Greece","Great Britain"};
 
+
     Human(String name,Date dateOfBirth,String cityOfBirth,String coutryOfBirth,int age){
         this.name = name;
         this.dateOfBirth = dateOfBirth;
