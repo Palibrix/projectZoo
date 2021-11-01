@@ -25,11 +25,7 @@ public class Main {
         Main m = new Main();
 
         System.out.println("We are happy to see you again!");
-        m.phoneCall();
-        first.announce();
-        System.out.println("What animal would you like to visit?\n" +
-                "Panda[1]; Lion[2]; Giraffe[3]");
-        visitAnAnimal();
+
     }
 
 
