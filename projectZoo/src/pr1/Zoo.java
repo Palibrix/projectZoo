@@ -1,10 +1,8 @@
 package pr1; 
  
 import java.util.Scanner; 
-import java.util.Arrays; 
- 
- 
- 
+import java.util.Arrays;
+
 public class Zoo extends Main{ 
  
     String name[]; 
@@ -94,8 +92,13 @@ public class Zoo extends Main{
         }
     }
 
-
-
+//    void registration(){
+//        for (int i=0;i<10;i++){
+//            if ( humans ){
+//
+//            }
+//        }
+//    }
 
     @Override 
     public String toString() { 
@@ -105,5 +108,5 @@ public class Zoo extends Main{
                 ", price=" + price + 
                 ", quantity=" + quantity + 
                 '}'; 
-    } 
+    }
 }
