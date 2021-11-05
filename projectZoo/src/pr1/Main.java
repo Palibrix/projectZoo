@@ -3,27 +3,27 @@ package pr1;
 import java.util.Scanner;
 import java.util.Date;
 
-public class Main {
+public class Main{
     Scanner sc = new Scanner(System.in);
     static Date date = new Date();
 
     static RandomQuantity random = new RandomQuantity(); 
-    static int randomQuant = random.random(); 
- 
-    static String names[] = {"Shapito", "Karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"}; 
-    static String locations[]= {"l`viv", "Taraso-Shevchenkivsk", "Old York", "Riznutsi", "Odessa-dad", "Pryamovo"}; 
+    static int randomQuant = random.random();
+
+    static String[] names = {"Shapito", "Karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"};
+    static String[] locations = {"l`viv", "Taraso-Shevchenkivsk", "Old York", "Riznutsi", "Odessa-dad", "Pryamovo"};
     static Zoo first = new Zoo(names, locations, 50, randomQuant);
 
     static int answer = -1;
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         Main m = new Main();
+        Human h = new Human();
 
         System.out.println("We are happy to see you again!");
-        /*System.out.println(h.humansList);
-        System.out.println(h.getAge()); ISSUE: виводить вік одного відвідувача, коли потрібно,
-        щоб виводило вік кожного. Як звернутись до параметру об'єкта, який сидить в списку? */
 
+        h.setHumanNames();
+        System.out.println(h.humans);
 
     }
  
