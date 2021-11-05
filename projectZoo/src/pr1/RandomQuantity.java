@@ -18,4 +18,8 @@ public class RandomQuantity extends Main {
         double i = rd.nextInt(6);
         return ((int) i);
     }
+    int rdHumanName(){
+        double i = rd.nextInt(20);
+        return  ((int) i);
+    }
 }
