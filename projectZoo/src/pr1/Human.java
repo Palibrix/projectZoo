@@ -2,18 +2,28 @@ package pr1;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Human extends Main {
+    Date date = new Date();
+    RandomQuantity random = new RandomQuantity();
+    Human(){}
+    Human(String name, int age){}
+
     String name;
     Date dateOfBirth;
     String cityOfBirth;
     String countryOfBirth;
     static int age = 10;
-    Date date = new Date();
-    ArrayList<Object> humansList = new ArrayList<>();
+    HashMap<Integer, String> humans = new HashMap<>();
+    static String[] humanNames = {"Alex", "John", "Theo", "Morty", "Rick", "Jesus", "Kurt", "Dave", "Ibrahim", "Freddy",
+            "Maria", "Ann", "Rose", "Ellie", "Penny", "Sophie", "Jill", "Olivia", "Chloe", "Emily"};
 
-    static int getAge() {
-        return age;
+    protected void setHumanNames() {
+        for(int i = 0;i<11;i++){
+            int rdHumanName = random.rdHumanName();
+            humans.put(i, Human.humanNames[rdHumanName]);
+        }
     }
 }
 
