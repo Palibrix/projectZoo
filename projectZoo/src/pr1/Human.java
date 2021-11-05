@@ -1,26 +1,34 @@
 package pr1;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Human {
+public class Human extends Main {
     String name;
     Date dateOfBirth;
     String cityOfBirth;
-    String coutryOfBirth;
-    int age;
+    String countryOfBirth;
+    static int age = 10;
+    Date date = new Date();
+    ArrayList<Object> humansList = new ArrayList<>();
 
-    String [] humanNames = {"Emily","Vasya","Penny","Benny","Paolo","Andriy","Alex"};
-    String [] humanCitiesOfBirth = {"Kyjiv","Moscow","Bangladesh","Warsaw","Washington","Ankara","London"};
-    String [] humanCountriesOfBirth = {"Ukraine","Russia","India","Poland","USA","Greece","Great Britain"};
-
-
-    Human(String name,Date dateOfBirth,String cityOfBirth,String coutryOfBirth,int age){
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.cityOfBirth = cityOfBirth;
-        this.coutryOfBirth = coutryOfBirth;
-        this.age = age;
+    static int getAge() {
+        return age;
     }
-
-
 }
+
+//    void createHumans() {                      //створює десять об'єктів людей
+//        Integer indexOfHuman = 1;
+//        for (int i = 0; i < 10; i++) {
+//            indexOfHuman.toString();
+//
+//            humansList.add(new Human("Human"+indexOfHuman,date,"Ivano-Frankivsk", "Ukraine",10));
+//            indexOfHuman++;
+//
+//        }
+//    }
+
+
+
+
+
