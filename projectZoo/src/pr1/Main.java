@@ -1,13 +1,12 @@
 package pr1; 
- 
+
 import java.util.Scanner;
+import java.util.Date;
 
-import static pr1.Animal.visitAnAnimal;
+public class Main {
+    Scanner sc = new Scanner(System.in);
+    static Date date = new Date();
 
-//TODOO: PhoneCall[1], Buy a Ticket[2], Visit an animal[3]; 
-public class Main { 
-    Scanner sc = new Scanner(System.in); 
- 
     static RandomQuantity random = new RandomQuantity(); 
     static int randomQuant = random.random(); 
  
@@ -15,24 +14,20 @@ public class Main {
     static String locations[]= {"l`viv", "Taraso-Shevchenkivsk", "Old York", "Riznutsi", "Odessa-dad", "Pryamovo"}; 
     static Zoo first = new Zoo(names, locations, 50, randomQuant);
 
-
     static int answer = -1;
 
-
- 
- 
     public static void main(String args[]) throws InterruptedException {
         Main m = new Main();
 
         System.out.println("We are happy to see you again!");
+        /*System.out.println(h.humansList);
+        System.out.println(h.getAge()); ISSUE: виводить вік одного відвідувача, коли потрібно,
+        щоб виводило вік кожного. Як звернутись до параметру об'єкта, який сидить в списку? */
+
 
     }
-
-
-
  
- 
-    void phoneCall(){ 
+    protected void menu(){
  
         System.out.println("You`re calling to Zoo. What do you want to find out or do?"); 
         System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]; Buy a ticket[5]"); 
@@ -45,7 +40,7 @@ public class Main {
         String a = sc.nextLine(); 
         answer = Integer.parseInt(a); 
         if (answer > 5 | answer < 1) { 
-            exeptToString(); 
+            exceptToString();
             exepts(); 
         }else{ 
  
@@ -70,14 +65,14 @@ public class Main {
         try { 
             info(); 
         }catch(Exception e){ 
-            exeptToString(); 
+            exceptToString();
             exepts(); 
         } 
     } 
  
     void reattemp(){ 
         String b = sc.nextLine(); 
-        b = b.toLowerCase(); //tyt була помилка.не понижало букви, треба було переприсвоїти значення змінній b;
+        b = b.toLowerCase();
         if(b.equals("y")){ 
             System.out.println(); 
             System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]; Buy a ticket[5];"); 
@@ -89,7 +84,7 @@ public class Main {
             }
     } 
  
-    void exeptToString(){ 
+    void exceptToString(){
         System.err.println("Type only 1, 2, 3 or 4"); 
         System.out.println(); 
         System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]"); 
