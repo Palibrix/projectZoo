@@ -22,4 +22,11 @@ public class RandomQuantity extends Main {
         double i = rd.nextInt(20);
         return  ((int) i);
     }
+    int rdHumanAge(){
+        double i = rd.nextInt(50);
+        if(i<8){
+            rdHumanAge();
+        }
+        return ((int) i);
+    }
 }

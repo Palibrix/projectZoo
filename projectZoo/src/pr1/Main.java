@@ -1,5 +1,6 @@
 package pr1; 
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Date;
 
@@ -21,10 +22,9 @@ public class Main{
         Human h = new Human();
 
         System.out.println("We are happy to see you again!");
-
-        h.setHumanNames();
+        System.out.println(h.humanProperties);
+        h.setHuman();
         System.out.println(h.humans);
-
     }
  
     protected void menu(){
