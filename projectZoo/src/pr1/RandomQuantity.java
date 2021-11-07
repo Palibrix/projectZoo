@@ -31,14 +31,4 @@ public class RandomQuantity extends Main {
         int a = rd.nextInt(50);
         return ((int) a);
     }
-
-//    String rdPassport() {
-//        for (int j = 0; j < 9; j++) {
-//            int i = rd.nextInt(9);
-//            String.valueOf(i);
-//            Human.passport = Human.passport + i;
-//        }
-//        Human.passport = Human.passport +" ";
-//        return Human.passport;
-//    }
 }

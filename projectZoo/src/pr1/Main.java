@@ -1,6 +1,6 @@
 package pr1; 
 
-import java.util.Arrays;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Date;
 
@@ -16,18 +16,16 @@ public class Main{
     static Zoo first = new Zoo(names, locations, 50, randomQuant);
 
     static int answer = -1;
-
-    public static void main(String[] args) throws InterruptedException {
+//_______________________________________________________________________
+    public static void main(String[] args) throws InterruptedException, IOException {
         Main m = new Main();
         Human h = new Human();
         Event e = new Event("First stage", "Outside", "Recruting people");
+        Settings firstRunCheck = new Settings();
 
-        System.out.println(Event.EventDescriptionEnum.getName());
+        firstRunCheck.firstRunCheck();
 
-        System.out.println("We are happy to see you again!");
-        System.out.println(h.humanProperties);
-        h.setHuman();
-        System.out.println(h.humans);
+
     }
  
     protected void menu(){
