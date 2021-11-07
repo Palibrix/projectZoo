@@ -20,6 +20,9 @@ public class Main{
     public static void main(String[] args) throws InterruptedException {
         Main m = new Main();
         Human h = new Human();
+        Event e = new Event("First stage", "Outside", "Recruting people");
+
+        System.out.println(Event.EventDescriptionEnum.getName());
 
         System.out.println("We are happy to see you again!");
         System.out.println(h.humanProperties);

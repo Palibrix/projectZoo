@@ -92,14 +92,6 @@ public class Zoo extends Main{
         }
     }
 
-//    void registration(){
-//        for (int i=0;i<10;i++){
-//            if ( humans ){
-//
-//            }
-//        }
-//    }
-
     @Override 
     public String toString() { 
         return "Zoo{" + 
