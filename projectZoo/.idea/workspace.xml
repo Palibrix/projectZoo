@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1a49e0a-592b-45fe-a9e2-8528248b9bf3" name="Default Changelist" comment="Settled the properties in Event class to future work with it.&#10;Changed the TicketBuy class name to Ticket.">
+      <change beforePath="$PROJECT_DIR$/out/production/projectZoo/pr1/Event$EventDescriptionEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectZoo/pr1/Event$EventDescriptionEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projectZoo/pr1/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectZoo/pr1/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projectZoo/pr1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectZoo/pr1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projectZoo/pr1/RandomQuantity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectZoo/pr1/RandomQuantity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projectZoo/pr1/Zoo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectZoo/pr1/Zoo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pr1/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pr1/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pr1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pr1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pr1/RandomQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pr1/RandomQuantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pr1/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pr1/Zoo.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20VDUh7Kpmr7L6QPo4XNDQFcotC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pr1.Main" />
+      <module name="projectZoo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pr1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1a49e0a-592b-45fe-a9e2-8528248b9bf3" name="Default Changelist" comment="" />
+      <created>1636120878968</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636120878968</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Settled the required fields in class. &#10;Created a HashMap to store 10 humans, where each has his own random generated name. &#10;On my way to set them their own ages.">
+      <created>1636129789676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636129789676</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated the Main class due to Human class changes.">
+      <created>1636129980819</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636129980819</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created a new random function to generate random value to choose the random name.">
+      <created>1636130195796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636130195796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Settled the properties in Event class to future work with it.&#10;Changed the TicketBuy class name to Ticket.">
+      <created>1636130439468</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636130439468</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Settled the required fields in class. &#10;Created a HashMap to store 10 humans, where each has his own random generated name. &#10;On my way to set them their own ages." />
+    <MESSAGE value="Updated the Main class due to Human class changes." />
+    <MESSAGE value="Created a new random function to generate random value to choose the random name." />
+    <MESSAGE value="Settled the properties in Event class to future work with it.&#10;Changed the TicketBuy class name to Ticket." />
+    <option name="LAST_COMMIT_MESSAGE" value="Settled the properties in Event class to future work with it.&#10;Changed the TicketBuy class name to Ticket." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="369" y="133" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1636135098381">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="369" y="133" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1280.760@0.0.1280.760" timestamp="1636135098381" />
+    <state x="93" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636128280747">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="93" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760@0.0.1280.760" timestamp="1636128280747" />
+    <state x="487" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1636121084933">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="487" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.760@0.0.1280.760" timestamp="1636121084933" />
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1636137564959">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1636137564959" />
+    <state width="1234" height="184" key="GridCell.Tab.0.bottom" timestamp="1636293692661">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1234" height="184" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1636293692661" />
+    <state width="1234" height="184" key="GridCell.Tab.0.center" timestamp="1636293692660">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1234" height="184" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1636293692660" />
+    <state width="1234" height="184" key="GridCell.Tab.0.left" timestamp="1636293692660">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1234" height="184" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1636293692660" />
+    <state width="1234" height="184" key="GridCell.Tab.0.right" timestamp="1636293692661">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1234" height="184" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1636293692661" />
+    <state x="588" y="76" key="RollbackChangesDialog" timestamp="1636217724733">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="588" y="76" key="RollbackChangesDialog/0.0.1280.760@0.0.1280.760" timestamp="1636217724733" />
+    <state x="231" y="111" key="Vcs.Push.Dialog.v2" timestamp="1636130445033">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="231" y="111" key="Vcs.Push.Dialog.v2/0.0.1280.760@0.0.1280.760" timestamp="1636130445033" />
+    <state x="296" y="165" key="run.anything.popup" timestamp="1636128272895">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="296" y="165" key="run.anything.popup/0.0.1280.760@0.0.1280.760" timestamp="1636128272895" />
+  </component>
+</project>
