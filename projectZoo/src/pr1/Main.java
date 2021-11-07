@@ -20,10 +20,11 @@ public class Main{
     public static void main(String[] args) throws InterruptedException, IOException {
         Main m = new Main();
         Human h = new Human();
-        Event e = new Event("First stage", "Outside", "Recruting people");
+        Event e = new Event("First stage", "Outside", "Recruiting people");
         Settings firstRunCheck = new Settings();
 
-        firstRunCheck.firstRunCheck();
+        h.debuggingUsersCheck();
+        e.theFirstStage();
 
 
     }

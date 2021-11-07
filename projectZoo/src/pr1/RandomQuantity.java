@@ -5,6 +5,7 @@ import java.util.Random;
 public class RandomQuantity extends Main {
     RandomQuantity() {
     }
+
     Random rd = new Random();
 
     int random() {
@@ -28,7 +29,9 @@ public class RandomQuantity extends Main {
     }
 
     int rdHumanAge() {
-        int a = rd.nextInt(50);
-        return ((int) a);
+        int minAge = 10;
+        int maxAge = 50;
+        double i = rd.nextInt(maxAge - minAge)+minAge;
+        return ((int) i);
     }
 }
