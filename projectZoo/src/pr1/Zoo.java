@@ -59,7 +59,7 @@ public class Zoo extends Main{
     } 
  
     void answerEqw5() throws ParseException {
-        buyTicket(); 
+        buyTicket();
     }
 
     void buyTicket() throws ParseException {
@@ -70,7 +70,7 @@ public class Zoo extends Main{
         System.out.println("Now let's take some notes!");
         z.getInfo();
 
-        if(p.age < 18){
+        if(p.age < 18){   //ISSUE: not comparing
             System.out.println("Sorry, dude, you're not allowed to take a part in this show");
         }else {
             System.out.println("Enter the number of tickets you want to buy!");
