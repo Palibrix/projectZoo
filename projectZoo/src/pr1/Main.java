@@ -1,12 +1,11 @@
 package pr1; 
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
-import java.util.Date;
 
 public class Main{
     Scanner sc = new Scanner(System.in);
-    static Date date = new Date();
 
     static RandomQuantity random = new RandomQuantity(); 
     static int randomQuant = random.random();
@@ -17,15 +16,13 @@ public class Main{
 
     static int answer = -1;
 //_______________________________________________________________________
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException, IOException, ParseException {
         Main m = new Main();
-        Human h = new Human();
+        Person h = new Person();
         Event e = new Event("First stage", "Outside", "Recruiting people");
         Settings firstRunCheck = new Settings();
 
-        h.debuggingUsersCheck();
-        e.theFirstStage();
-
+        first.buyTicket();
 
     }
  
@@ -38,7 +35,7 @@ public class Main{
  
     } 
  
-    void info(){ 
+    void info() throws ParseException {
         String a = sc.nextLine(); 
         answer = Integer.parseInt(a); 
         if (answer > 5 | answer < 1) { 
@@ -57,9 +54,7 @@ public class Main{
             } else if(answer == 5) 
                 first.answerEqw5(); 
             System.out.println("Would you like to ask something more?[y/n]"); 
-            reattemp(); 
- 
-            //// 
+            reattemp();
         } 
     } 
  
