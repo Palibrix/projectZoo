@@ -1,18 +1,13 @@
 package pr1;
 
-import java.util.*;
-
-public class Human extends Main {
+public class Person extends Main {
     String name;
-    Date dateOfBirth;
+    String surname;
+    long age;
+    String dateOfBirthSTRING;
+    String passportNumber;
     String cityOfBirth;
     String countryOfBirth;
-    int age;
 
-    Date date = new Date();
-    RandomQuantity random = new RandomQuantity();
-    Human(){}
-    Human(String name, int age){}
-
-    
+    Person(){}
 }
