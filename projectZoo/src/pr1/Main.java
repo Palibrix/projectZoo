@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main{
     Scanner sc = new Scanner(System.in);
 
-    static RandomQuantity random = new RandomQuantity(); 
+    static RandomQuantity random = new RandomQuantity();
     static int randomQuant = random.random();
 
     static String[] names = {"Shapito", "Karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"};
@@ -20,10 +20,8 @@ public class Main{
         Main m = new Main();
         Person h = new Person();
         Event e = new Event("First stage", "Outside", "Recruiting people");
-        Settings firstRunCheck = new Settings();
 
-        first.buyTicket();
-
+        e.theFirstStage();
     }
  
     protected void menu(){
@@ -85,6 +83,5 @@ public class Main{
         System.err.println("Type only 1, 2, 3 or 4"); 
         System.out.println(); 
         System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]"); 
-    } 
- 
+    }
 }

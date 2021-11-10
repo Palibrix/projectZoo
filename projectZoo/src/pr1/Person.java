@@ -1,10 +1,12 @@
 package pr1;
 
 public class Person extends Main {
+    int numOfHumans; //for creating existing people
     String name;
     String surname;
-    long age;
-    String dateOfBirthSTRING;
+    int yearOB;
+    int monthOB;
+    int dayOB;
     String passportNumber;
     String cityOfBirth;
     String countryOfBirth;
