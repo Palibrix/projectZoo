@@ -22,16 +22,4 @@ public class RandomQuantity extends Main {
         double i = rd.nextInt(6);
         return ((int) i);
     }
-
-    int rdHumanName() {
-        double i = rd.nextInt(20);
-        return ((int) i);
-    }
-
-    int rdHumanAge() {
-        int minAge = 10;
-        int maxAge = 50;
-        double i = rd.nextInt(maxAge - minAge)+minAge;
-        return ((int) i);
-    }
 }
