@@ -1,9 +1,10 @@
 package pr1; 
  
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.time.LocalDate;
-import java.time.Period;
 
 public class Zoo extends Main{
     String name[]; 
@@ -13,6 +14,8 @@ public class Zoo extends Main{
     RandomQuantity random = new RandomQuantity();
     Person p = new Person();
     Main m = new Main();
+
+    LocalDate currentDate = LocalDate.now();
 
     int rdName = random.rdName(); 
     int rdLoc1 = random.rdLocation(); 
@@ -67,7 +70,7 @@ public class Zoo extends Main{
         if(buyAnswer.equals("y")){
             m.menu();
         }else if(buyAnswer.equals("n")){
-            buyTicket();
+            actualBuyTicket();
         }else{
             System.out.println("Please enter [Y/N]");
             mindChanging();
@@ -75,12 +78,15 @@ public class Zoo extends Main{
         }
     }
 
-    void getInfo() {
+    void getVisitorInfo() {
         System.out.println("Please enter your name: "); //ім'я
         p.name = sc.nextLine();
 
         System.out.println("And surname: ");            //прізвище
         p.surname = sc.nextLine();
+
+        System.out.println("Good! Now please enter the serial number of your passport");   //паспорт
+        p.passportNumber = sc.nextLine();
 
         System.out.println("Ooh, pretty! Now please enter your year of birth! [YYYY]"); //дата
         p.yearOB= sc.nextInt();
@@ -89,16 +95,16 @@ public class Zoo extends Main{
         System.out.println("And the day of birth! [DD]");
         p.dayOB = sc.nextInt();
 
-        System.out.println("Good! Now please enter the serial number of your passport");   //паспорт
-        p.passportNumber = sc.nextLine();
-    }
+        LocalDate fullBD = LocalDate.of(p.yearOB, Month.of(p.monthOB), p.dayOB);
+//_______________________________________________________
+        if (calculateAge(fullBD, currentDate)<18){
+            System.out.println("Sorry, you're not allowed no take a part in out show(((");
+        }
+        else {
+           actualBuyTicket();
+        }
+//_______________________________________________________
 
-    void buyTicket(){
-        Zoo z = new Zoo();
-
-        System.out.println("Now let's take some notes!");
-        z.getInfo();
-        actualBuyTicket();
     }
 
     void actualBuyTicket(){
@@ -125,6 +131,21 @@ public class Zoo extends Main{
                 e.printStackTrace();
             }
         }
+    }
+
+    public static int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+        if ((birthDate != null) && (currentDate != null)) {
+            return Period.between(birthDate, currentDate).getYears();
+        } else {
+            return 0;
+        }
+    }
+
+    void buyTicket(){
+        Zoo z = new Zoo();
+
+        System.out.println("Now let's take some notes!");
+        z.getVisitorInfo();
     }
 
 //    public int getAge(int yearOB, int monthOB, int dayOB) {

@@ -42,17 +42,23 @@ public class Main{
         }else{ 
  
             if(answer == 1){ 
-                  first.answerEqw1(); 
+                  first.answerEqw1();
+                System.out.println("Would you like to ask something more?[y/n]");
+                reattemp();
             } else if(answer == 2){ 
-                first.answerEqw2(); 
+                first.answerEqw2();
+                System.out.println("Would you like to ask something more?[y/n]");
+                reattemp();
             } if(answer == 3){ 
-                first.answerEqw3(); 
+                first.answerEqw3();
+                System.out.println("Would you like to ask something more?[y/n]");
+                reattemp();
             } else if(answer == 4){ 
-                first.answerEqw4(); 
+                first.answerEqw4();
+                System.out.println("Would you like to ask something more?[y/n]");
+                reattemp();
             } else if(answer == 5) 
-                first.answerEqw5(); 
-            System.out.println("Would you like to ask something more?[y/n]"); 
-            reattemp();
+                first.answerEqw5();
         } 
     } 
  

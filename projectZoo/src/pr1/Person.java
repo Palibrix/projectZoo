@@ -1,12 +1,17 @@
 package pr1;
 
+import java.time.LocalDate;
+
 public class Person extends Main {
     int numOfHumans; //for creating existing people
+
     String name;
     String surname;
+
     int yearOB;
     int monthOB;
     int dayOB;
+
     String passportNumber;
     String cityOfBirth;
     String countryOfBirth;

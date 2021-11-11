@@ -1,11 +1,13 @@
 package pr1;
 
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Event extends Main {
     Scanner sc = new Scanner(System.in);
     Zoo z = new Zoo();
+    Person p = new Person();
 
     enum EventEnum {
         NAME,
