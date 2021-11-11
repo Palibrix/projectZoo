@@ -1,7 +1,6 @@
-package pr1;
+package Zoo;
 
 import java.text.ParseException;
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Event extends Main {
