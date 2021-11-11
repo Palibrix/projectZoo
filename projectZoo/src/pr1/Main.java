@@ -17,8 +17,6 @@ public class Main{
     static int answer = -1;
 //_______________________________________________________________________
     public static void main(String[] args) throws InterruptedException, IOException, ParseException {
-        Main m = new Main();
-        Person h = new Person();
         Event e = new Event("First stage", "Outside", "Recruiting people");
 
         e.theFirstStage();

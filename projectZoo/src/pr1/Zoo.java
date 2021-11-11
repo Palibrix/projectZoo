@@ -3,6 +3,7 @@ package pr1;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -10,6 +11,7 @@ public class Zoo extends Main{
     String name[]; 
     String location[]; 
     int price; static int quantity;
+    ArrayList<Object> visitorsList = new ArrayList<>();
  
     RandomQuantity random = new RandomQuantity();
     Person p = new Person();
@@ -37,7 +39,7 @@ public class Zoo extends Main{
             System.out.println(i + " seconds"); 
             Thread.sleep(1000); 
         }
-        System.out.println("Have fun!");
+        System.out.println("Welcome!");
     } 
  
     void answerEqw1(){ 
@@ -124,12 +126,24 @@ public class Zoo extends Main{
             System.out.println("There was " + quantity + " tickets");
             quantity = quantity - numOfBuyTickets;
             System.out.println("And now there is " + quantity + " of them");
-            System.out.println("You've bought " + numOfBuyTickets + " ticket(s). Thank you and have fun!");
+            System.out.println("You've bought " + numOfBuyTickets + " ticket(s). Thank you!");
+
+            System.out.println("*** a couple of people arrived and also bought some tickets ***");
+            System.out.println("Okay, we're ready to start our show. Take your places and enjoy!");
             try {
                 first.announce();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    void setVisitorsList(){
+        p.countOfVisitors = 10-quantity;
+
+        for(int i = 1;i<p.countOfVisitors+1;i++){
+            Person visitor = new Person(i,random.rdVisitorAge());
+            visitorsList.add(visitor);
         }
     }
 

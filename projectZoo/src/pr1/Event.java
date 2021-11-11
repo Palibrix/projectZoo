@@ -32,12 +32,14 @@ public class Event extends Main {
                     "If you want, you can wait a couple of hours, thought...");
         }
         else if(Zoo.quantity<=5){
+            z.setVisitorsList(); //створення уявних відвідувачів, що вже купили квиток
             System.out.println("Oh, you're right on time! The show is nearly going to start. Would you like " +
                     "to buy a ticket right now?[Y/N]");
             buyTicketNow();
         }
         else{
-            System.out.println("No need in hurry! We're peacefully recruiting people right now. Do you want to " +
+            z.setVisitorsList(); //створення уявних відвідувачів, що вже купили квиток
+            System.out.println("No need in hurry! We're just preparing to start a show. Do you want to " +
                     "buy a ticket[1] or maybe you have some questions[2]?");
             noNeedToHurry();
         }
