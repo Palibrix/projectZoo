@@ -1,9 +1,9 @@
 package Database;
 
-public class DB_Main {
-    String username, password;
+import java.sql.SQLException;
 
-    String URL, className;
+public class DB_Main {
+    String username, password, URL, className;
 
     public DB_Main(){}
 
@@ -25,8 +25,25 @@ public class DB_Main {
         try {
             cleaning.cleaning();
         }catch (Exception e){
-
         }
+    }
+
+    public void addNewUser(String name, String surname, String passport){
+        User userOne = new User(username, password, URL, className);
+        userOne.addingNewUser(name, surname, passport);
+    }
+
+    public void getAllPeople(){
+        User userOne = new User(username, password, URL, className);
+        userOne.getAllUsers();
+    }
+
+    public void firstEntry() throws ClassNotFoundException, SQLException {
+        InitializationDB inDB = new InitializationDB(username, password, URL, className);
+        inDB.peopleTable();
+        inDB.zooTable();
+        inDB.animalsTable();
+        inDB.citiesTable();
 
     }
 

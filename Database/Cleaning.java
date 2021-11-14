@@ -11,10 +11,6 @@ class Cleaning extends DB_Main {
 
     private static Connection con;
 
-    private static Statement stmt;
-
-    private static ResultSet rs;
-
     public void cleaning() throws ClassNotFoundException {
         Class.forName(className);
         String drop = "drop table people";
