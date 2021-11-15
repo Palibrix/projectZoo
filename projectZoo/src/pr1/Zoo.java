@@ -1,19 +1,31 @@
 package pr1; 
  
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.io.BufferedReader;
 
-public class Zoo extends Main{
+public class Zoo{
+    Zoo(){}
+    Zoo(String name[], String location[], int price, int quantity){
+        this.name = name;
+        this.location = location;
+        this.price = price;
+        this.quantityOfTickets = quantity;
+    }
+
     String name[]; 
     String location[]; 
-    int price; static int quantity;
+    int price; static int quantityOfTickets;
     ArrayList<Object> visitorsList = new ArrayList<>();
  
     RandomQuantity random = new RandomQuantity();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     Person p = new Person();
     Main m = new Main();
 
@@ -21,15 +33,7 @@ public class Zoo extends Main{
 
     int rdName = random.rdName(); 
     int rdLoc1 = random.rdLocation(); 
-    int rdLoc2 = random.rdLocation(); 
- 
-    Zoo(){} 
-    Zoo(String name[], String location[], int price, int quantity){ 
-        this.name = name; 
-        this.location = location; 
-        this.price = price; 
-        this.quantity = quantity; 
-    }
+    int rdLoc2 = random.rdLocation();
  
     void announce() throws InterruptedException { 
         int i; 
@@ -43,7 +47,7 @@ public class Zoo extends Main{
     } 
  
     void answerEqw1(){ 
-        System.out.println(quantity + " ticket(s) left"); 
+        System.out.println(quantityOfTickets + " ticket(s) left");
     } 
  
     void answerEqw2(){ 
@@ -82,24 +86,48 @@ public class Zoo extends Main{
 
     void getVisitorInfo() {
         System.out.println("Please enter your name: "); //ім'я
-        p.name = sc.nextLine();
+        try {
+            p.name = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("And surname: ");            //прізвище
-        p.surname = sc.nextLine();
+        try {
+            p.surname = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("Good! Now please enter the serial number of your passport");   //паспорт
-        p.passportNumber = sc.nextLine();
+        try {
+            p.passportNumber = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("Ooh, pretty! Now please enter your year of birth! [YYYY]"); //дата
-        p.yearOB= sc.nextInt();
+        try {
+            p.yearOB= Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Month of birth! [MM]");
-        p.monthOB = sc.nextInt();
+        try {
+            p.monthOB = Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("And the day of birth! [DD]");
-        p.dayOB = sc.nextInt();
+        try {
+            p.dayOB = Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         LocalDate fullBD = LocalDate.of(p.yearOB, Month.of(p.monthOB), p.dayOB);
 //_______________________________________________________
-        if (calculateAge(fullBD, currentDate)<18){
+        if (calculateAge(fullBD, currentDate) < Const.ageOfMajority){
             System.out.println("Sorry, you're not allowed no take a part in out show(((");
         }
         else {
@@ -111,9 +139,14 @@ public class Zoo extends Main{
 
     void actualBuyTicket(){
         System.out.println("Enter the number of tickets you want to buy!");
-        int numOfBuyTickets = sc.nextInt();
+        int numOfBuyTickets = 0;
+        try {
+            numOfBuyTickets = Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        if (numOfBuyTickets > quantity) {
+        if (numOfBuyTickets > quantityOfTickets) {
             System.out.println("We don't have so many tickets already! Would you like to buy some less?");
             actualBuyTicket();
         } else if (numOfBuyTickets == 0) {
@@ -123,15 +156,15 @@ public class Zoo extends Main{
             System.out.println("That's not serious...");
             actualBuyTicket();
         } else {
-            System.out.println("There was " + quantity + " tickets");
-            quantity = quantity - numOfBuyTickets;
-            System.out.println("And now there is " + quantity + " of them");
+            System.out.println("There was " + quantityOfTickets + " tickets");
+            quantityOfTickets = quantityOfTickets - numOfBuyTickets;
+            System.out.println("And now there is " + quantityOfTickets + " of them");
             System.out.println("You've bought " + numOfBuyTickets + " ticket(s). Thank you!");
 
             System.out.println("*** a couple of people arrived and also bought some tickets ***");
             System.out.println("Okay, we're ready to start our show. Take your places and enjoy!");
             try {
-                first.announce();
+                announce();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -139,7 +172,7 @@ public class Zoo extends Main{
     }
 
     void setVisitorsList(){
-        p.countOfVisitors = 10-quantity;
+        p.countOfVisitors = Const.quantityOfAllVisitors-quantityOfTickets;
 
         for(int i = 1;i<p.countOfVisitors+1;i++){
             Person visitor = new Person(i,random.rdVisitorAge());
@@ -162,20 +195,13 @@ public class Zoo extends Main{
         z.getVisitorInfo();
     }
 
-//    public int getAge(int yearOB, int monthOB, int dayOB) {
-//        return Period.between(
-//                LocalDate.of(yearOB, monthOB, dayOB),
-//                LocalDate.now()
-//        ).getYears();
-//    }
-
     @Override 
     public String toString() { 
         return "Zoo{" + 
                 "name=" + Arrays.toString(name) + 
                 ", location=" + Arrays.toString(location) + 
                 ", price=" + price + 
-                ", quantity=" + quantity + 
+                ", quantity=" + quantityOfTickets +
                 '}'; 
     }
 }

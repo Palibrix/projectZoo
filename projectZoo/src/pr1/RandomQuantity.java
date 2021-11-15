@@ -2,10 +2,7 @@ package pr1;
 
 import java.util.Random;
 
-public class RandomQuantity extends Main {
-    RandomQuantity() {
-    }
-
+public class RandomQuantity{
     Random rd = new Random();
 
     int random() {

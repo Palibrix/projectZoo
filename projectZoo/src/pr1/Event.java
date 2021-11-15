@@ -1,12 +1,14 @@
 package pr1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.util.Scanner;
 
-public class Event extends Main {
-    Scanner sc = new Scanner(System.in);
+public class Event {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     Zoo z = new Zoo();
+    Main m = new Main();
     Person p = new Person();
 
     enum EventEnum {
@@ -18,7 +20,6 @@ public class Event extends Main {
     static String name;
     static String location;
     static String type;
-    Person h = new Person();
 
     Event(String name, String location, String type) {
         this.name = name;
@@ -27,11 +28,11 @@ public class Event extends Main {
     }
 
     void theFirstStage() throws ParseException {
-        if(Zoo.quantity == 0){
+        if(z.quantityOfTickets == 0){
             System.out.println("Sorry,show has already started, there is no tickets left for you, too(" +
                     "If you want, you can wait a couple of hours, thought...");
         }
-        else if(Zoo.quantity<=5){
+        else if(Zoo.quantityOfTickets <= 5){
             z.setVisitorsList(); //створення уявних відвідувачів, що вже купили квиток
             System.out.println("Oh, you're right on time! The show is nearly going to start. Would you like " +
                     "to buy a ticket right now?[Y/N]");
@@ -46,13 +47,18 @@ public class Event extends Main {
 
     }
 
-    void noNeedToHurry() throws ParseException {
-        int answer = sc.nextInt();
+    void noNeedToHurry() {
+        int answer = 0;
+        try {
+            answer = Integer.parseInt(reader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if (answer == 1){
             z.buyTicket();
         }
         else if (answer == 2){
-            z.menu();
+            m.menu();
         }
         else{
             System.err.println("Please, enter 1 or 2");
@@ -61,7 +67,12 @@ public class Event extends Main {
     }
 
     void buyTicketNow() throws ParseException {
-        String answer = sc.nextLine();
+        String answer = null;
+        try {
+            answer = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         answer = answer.toLowerCase();
         if (answer.equals("y")){
             z.buyTicket();

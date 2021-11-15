@@ -1,6 +1,6 @@
 package pr1;
 
-public class Person extends Main {
+public class Person {
     int countOfVisitors; //for creating existing people
 
     String name;
