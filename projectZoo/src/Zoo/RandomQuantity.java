@@ -1,4 +1,4 @@
-package pr1;
+package Zoo;
 
 import java.util.Random;
 

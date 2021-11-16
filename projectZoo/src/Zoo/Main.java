@@ -1,12 +1,17 @@
-package pr1; 
+package Zoo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
+import Database.DB_Main;
+import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Main {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    static Scanner sc = new Scanner(System.in);
+
 
     static RandomQuantity random = new RandomQuantity();
     static int randomQuant = random.random();
@@ -17,10 +22,27 @@ public class Main {
 
     static int answer = -1;
 //_______________________________________________________________________
-    public static void main(String[] args) throws InterruptedException, IOException, ParseException {
+    public static void main(String[] args) throws InterruptedException, IOException, ParseException,
+            ClassNotFoundException, SQLException {
         Event e = new Event("First stage", "Outside", "Recruiting people");
+        Main m = new Main();
 
-        e.theFirstStage();
+        final String URL = "jdbc:mysql://localhost:3306/projectZoo";
+        final String className = "com.mysql.cj.jdbc.Driver";
+
+        System.out.print("Username: ");
+        String username = sc.nextLine();
+        System.out.println("Password: ");
+        String password = sc.nextLine();
+
+        DB_Main database = new DB_Main(username, password, URL, className);
+        database.TestConnection();
+        //comment next line after first start
+        database.firstEntry();
+        database.Cleaning();
+        m.choosing(database);
+
+//        e.theFirstStage();
     }
  
     protected void menu(){
@@ -100,4 +122,27 @@ public class Main {
         System.out.println(); 
         System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]"); 
     }
-}
+
+        private void choosing(DB_Main database){
+            System.out.println("Add user[1], Get all users[2], Exit[3]");
+            int number = sc.nextInt();
+            if (number == 1){
+                System.out.println("Name: ");
+                String name = sc.next();
+                System.out.println("Surname: ");
+                String surname = sc.next();
+                System.out.println("Passport: ");
+                String passport = sc.next();
+                database.addNewUser(name, surname, passport);
+                choosing(database);
+
+            }
+            else if (number == 2 )
+            {
+                database.getAllPeople();
+                choosing(database);
+            }else{
+                System.exit(-1);
+            }
+        }
+    }

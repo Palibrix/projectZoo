@@ -1,4 +1,4 @@
-package pr1; 
+package Zoo;
  
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,15 +12,15 @@ import java.io.BufferedReader;
 
 public class Zoo{
     Zoo(){}
-    Zoo(String name[], String location[], int price, int quantity){
+    Zoo(String[] name, String[] location, int price, int quantity){
         this.name = name;
         this.location = location;
         this.price = price;
-        this.quantityOfTickets = quantity;
+        quantityOfTickets = quantity;
     }
 
-    String name[]; 
-    String location[]; 
+    String[] name;
+    String[] location;
     int price; static int quantityOfTickets;
     ArrayList<Object> visitorsList = new ArrayList<>();
  

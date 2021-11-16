@@ -1,4 +1,4 @@
-package pr1;
+package Zoo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,6 @@ public class Event {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     Zoo z = new Zoo();
     Main m = new Main();
-    Person p = new Person();
 
     enum EventEnum {
         NAME,
@@ -22,12 +21,12 @@ public class Event {
     static String type;
 
     Event(String name, String location, String type) {
-        this.name = name;
-        this.location = location;
-        this.type = type;
+        Event.name = name;
+        Event.location = location;
+        Event.type = type;
     }
 
-    void theFirstStage() throws ParseException {
+    void theFirstStage() {
         if(z.quantityOfTickets == 0){
             System.out.println("Sorry,show has already started, there is no tickets left for you, too(" +
                     "If you want, you can wait a couple of hours, thought...");
@@ -66,13 +65,14 @@ public class Event {
         }
     }
 
-    void buyTicketNow() throws ParseException {
+    void buyTicketNow(){
         String answer = null;
         try {
             answer = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert answer != null;
         answer = answer.toLowerCase();
         if (answer.equals("y")){
             z.buyTicket();

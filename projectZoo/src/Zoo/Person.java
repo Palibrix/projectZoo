@@ -1,4 +1,4 @@
-package pr1;
+package Zoo;
 
 public class Person {
     int countOfVisitors; //for creating existing people

@@ -1,4 +1,4 @@
-package pr1;
+package Zoo;
 
 import java.io.File;
 import java.io.IOException;
