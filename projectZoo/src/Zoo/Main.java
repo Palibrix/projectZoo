@@ -27,6 +27,13 @@ public class Main {
         Event e = new Event("First stage", "Outside", "Recruiting people");
         Main m = new Main();
 
+//        m.sqlStart();
+//        e.theFirstStage();
+    }
+
+    void sqlStart() throws SQLException, ClassNotFoundException {
+        Main m = new Main();
+
         final String URL = "jdbc:mysql://localhost:3306/projectZoo";
         final String className = "com.mysql.cj.jdbc.Driver";
 
@@ -38,13 +45,10 @@ public class Main {
         DB_Main database = new DB_Main(username, password, URL, className);
         database.TestConnection();
         //comment next line after first start
-        database.firstEntry();
+//        database.firstEntry();
         database.Cleaning();
         m.choosing(database);
-
-//        e.theFirstStage();
     }
- 
     protected void menu(){
  
         System.out.println("You`re calling to Zoo. What do you want to find out or do?"); 
