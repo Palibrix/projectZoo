@@ -22,7 +22,7 @@ public class Main {
         database.TestConnection();
         //comment next line after first start
 //        database.firstEntry();
-//        database.Cleaning();
+        database.Cleaning();
 
 
         Main m = new Main();
