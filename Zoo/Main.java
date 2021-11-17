@@ -24,6 +24,7 @@ public class Main {
 //        database.firstEntry();
         database.Cleaning();
 
+//        int a;
 
         Main m = new Main();
        m.choosing(database);
