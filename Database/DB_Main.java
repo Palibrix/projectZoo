@@ -46,5 +46,9 @@ public class DB_Main {
 
     }
 
+    public void removingUser(String name, String UID){
+        User userOne = new User(username, password, URL, className);
+        userOne.removeUser(name, UID);
+    }
 
 }

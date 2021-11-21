@@ -73,4 +73,22 @@ public class User extends DB_Main {
         return random + "";
     }
 
+    public void removeUser(String name, String UID){
+        String removing =   "delete from people " +
+                            " where UID = ? AND name = ? ;";
+        try {
+            con = DriverManager.getConnection(URL, username, password);
+            PreparedStatement prepStatREMOVING = con.prepareStatement(removing);
+
+            prepStatREMOVING.setString(1, UID);
+            prepStatREMOVING.setString(2, name);
+            prepStatREMOVING.execute();
+            System.out.println("User \""+name+"\" with UID:"+UID+" removed");
+            con.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
 }

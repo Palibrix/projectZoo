@@ -7,7 +7,7 @@ class Ticket {
     int quantityOfTickets;
     Ticket(int quantityOfTickets){
         this.quantityOfTickets = quantityOfTickets;
-        System.out.println(quantityOfTickets);
+//        System.out.println(quantityOfTickets);
     }
 
 

@@ -2,12 +2,15 @@ package Zoo;
 
 import Database.DB_Main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
 
-    static Scanner sc = new Scanner(System.in);
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static RandomQuantity random = new RandomQuantity();
     static int randomQuant = random.random();
 
@@ -21,25 +24,32 @@ public class Main {
     static int answer = -1;
 
 
-    public static void main(String args[]) throws ClassNotFoundException, SQLException, InterruptedException {
+    public static void main(String args[]) {
         final String URL = "jdbc:mysql://localhost:3306/projectZoo";
         final String className = "com.mysql.cj.jdbc.Driver";
 
-        System.out.print("Username: ");
-        String username = sc.nextLine();
-        System.out.println("Password: ");
-        String password = sc.nextLine();
-
-
+        String username = null;
+        String password = null;
+        try {
+            System.out.print("Username: ");
+            username = br.readLine();
+            System.out.print("Password: ");
+            password = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         DB_Main database = new DB_Main(username, password, URL, className);
         database.TestConnection();
-        //comment next line after first start
-//        database.firstEntry();
+
 //        database.Cleaning();
 
         Main m = new Main();
-        m.choosing(database);
+        try {
+            m.choosing(database);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println(first.toString());
 
@@ -51,23 +61,31 @@ public class Main {
 
     }
 
-    private void choosing(DB_Main database){
-        System.out.println("Add user[1], Get all users[2], Exit[3]");
-        int number = sc.nextInt();
-        if (number == 1){
-            System.out.println("Name: ");
-            String name = sc.next();
-            System.out.println("Surname: ");
-            String surname = sc.next();
-            System.out.println("Passport: ");
-            String passport = sc.next();
+    private void choosing(DB_Main database) throws IOException {
+        System.out.println("Add user[1], Get all users[2], Remove user[3], Exit(default)");
+        String number = br.readLine();
+        if (number.equals("1")){
+            System.out.print("Name: ");
+            String name = br.readLine();
+            System.out.print("Surname: ");
+            String surname = br.readLine();
+            System.out.print("Passport: ");
+            String passport = br.readLine();;
             database.addNewUser(name, surname, passport);
             choosing(database);
             
         }
-        else if (number == 2 )
+        else if (number.equals("2"))
         {
             database.getAllPeople();
+            choosing(database);
+        }
+        else if(number.equals("3")){
+            System.out.print("Name: ");
+            String name = br.readLine();;
+            System.out.print("UID: ");
+            String UID = br.readLine();;
+            database.removingUser(name, UID);
             choosing(database);
         }else{
             phoneCall();
@@ -88,8 +106,8 @@ public class Main {
 
     }
 
-    void info(){
-        String a = sc.nextLine();
+    void info() throws IOException {
+        String a = br.readLine();
         answer = Integer.parseInt(a);
         if (answer > 5 | answer < 1) {
             exeptToString();
@@ -126,14 +144,14 @@ public class Main {
         }
     }
 
-    void reattemp(){
-        String b = sc.nextLine();
+    void reattemp() throws IOException {
+        String b = br.readLine();
         b.toLowerCase();
         if(b.equals("y")){
             System.out.println();
             System.out.println("Number of tickets left[1]; Ticket price[2]; Name[3]; Locations[4]; Buy a ticket[5]");
             exepts();
-        }else if (b.equals("n")){}
+        }else if (b.equals("n")){System.exit(-20);}
             else{
                 System.out.println("Type \"y\" or \"n\"");
                 reattemp();
