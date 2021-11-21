@@ -11,7 +11,7 @@ public class Main {
     static RandomQuantity random = new RandomQuantity();
     static int randomQuant = random.random();
 
-    TicketBuy ticketBuy = new TicketBuy(randomQuant);
+    Ticket ticketBuy = new Ticket(randomQuant);
 
     static String names[] = {"Shapito", "Karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"};
     static String locations[]= {"l`viv", "Taraso-Shevchenkivsk", "Old York", "Riznutsi", "Odessa-dad", "Pryamovo"};
@@ -70,7 +70,8 @@ public class Main {
             database.getAllPeople();
             choosing(database);
         }else{
-            System.exit(-1);
+            phoneCall();
+
         }
 
 
