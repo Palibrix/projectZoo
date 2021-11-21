@@ -73,5 +73,4 @@ public class User extends DB_Main {
         return random + "";
     }
 
-
 }

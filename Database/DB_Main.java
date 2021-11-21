@@ -14,7 +14,6 @@ public class DB_Main {
         this.className = className;
     }
 
-
     public void TestConnection(){
         Connection test = new Connection(username, password, URL, className);
         test.getConnection();
