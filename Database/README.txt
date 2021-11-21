@@ -24,3 +24,11 @@ Here is some possible troubles:
     2. Open "Reconfiguration"
     3. Follow "Next" links
     4. Done
+
+
+Methods instruction:
+1. firstEntry - loading all databases on your PC
+2. Cleaning - clean "People" database; use it after launching program
+3. TestConnection - testing if everything okay with database and driver
+4. getAllPeople - get everyone
+5. addNewUser(name, surname, passport) - create new user

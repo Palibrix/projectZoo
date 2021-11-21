@@ -22,9 +22,7 @@ public class Main {
         database.TestConnection();
         //comment next line after first start
 //        database.firstEntry();
-        database.Cleaning();
-
-//        int a;
+//        database.Cleaning();
 
         Main m = new Main();
        m.choosing(database);
