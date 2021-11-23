@@ -34,11 +34,11 @@ Methods instruction:
 4. getAllPeople - get everyone;
 5. addNewUser(name, surname, passport) - create new user;
 6. removeUser(name, UID);
+7. getZooWhereIsAnimal(Animal name), returning: ArrayList of locations
 
 In progress:
 
-1. getZooWhereIsAnimal(Animal name);
-2. updateZoo(remove/add, name);
+1. updateZoo(remove/add, name);
 
 Exit codes:
 1. -20 — call ended, everything correct;

@@ -5,12 +5,6 @@ import java.sql.Connection;
 
 public class InitializationDB extends DB_Main {
 
-    InitializationDB(String username, String password, String URL, String className){
-        super(username, password, URL, className);
-    }
-
-    private static Connection con;
-
     public void peopleTable() throws ClassNotFoundException {
         Class.forName(className);
         String create = "create table people (\n" +
@@ -22,9 +16,7 @@ public class InitializationDB extends DB_Main {
                 " );";
         try {
             con = DriverManager.getConnection(URL, username, password);
-
             PreparedStatement prepStatCREATING = con.prepareStatement(create);
-
             prepStatCREATING.execute();
             System.out.println("Table \"people\" created");
             con.close();
@@ -59,7 +51,7 @@ public class InitializationDB extends DB_Main {
 
         String addZoo = "insert into zoo (name) value (?);";
 
-        String mas[] = {"Shapito", "karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"};
+        String mas[] = {"Shapito", "Karamel", "Cucumber", "Dolce i Kaban", "Winni Duck"};
 
         PreparedStatement prepStatINSERT = con.prepareStatement(addZoo);
 

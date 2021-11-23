@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +25,7 @@ public class Main {
     static int answer = -1;
 
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException, ClassNotFoundException {
         final String URL = "jdbc:mysql://localhost:3306/projectZoo";
         final String className = "com.mysql.cj.jdbc.Driver";
 
@@ -40,10 +41,13 @@ public class Main {
         }
 
         DB_Main database = new DB_Main(username, password, URL, className);
-        database.TestConnection();
+        database.testConnection();
+
+        ArrayList locations = database.getZooWhereIsAnimal("Doxy");
+        System.out.println(locations);
 
 //        database.Cleaning();
-
+//        database.firstEntry();
         Main m = new Main();
         try {
             m.choosing(database);
@@ -95,7 +99,6 @@ public class Main {
 
 
     }
-
 
     void phoneCall(){
 
