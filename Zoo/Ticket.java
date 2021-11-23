@@ -1,13 +1,13 @@
-package pr1;
+package Zoo;
 
 import java.util.Scanner;
 
-class TicketBuy{
+class Ticket {
 
     int quantityOfTickets;
-    TicketBuy(int quantityOfTickets){
+    Ticket(int quantityOfTickets){
         this.quantityOfTickets = quantityOfTickets;
-        System.out.println(quantityOfTickets);
+//        System.out.println(quantityOfTickets);
     }
 
 
