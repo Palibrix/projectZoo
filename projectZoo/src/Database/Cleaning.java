@@ -5,10 +5,6 @@ import java.sql.Connection;
 
 class Cleaning extends DB_Main {
 
-   Cleaning(String username, String password, String URL, String className){
-        super(username, password, URL, className);
-    }
-
     private static Connection con;
 
     public void cleaning() throws ClassNotFoundException {
